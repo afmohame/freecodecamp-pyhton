@@ -3,17 +3,20 @@ empty_dot = '○'
 
 def create_character(name, strength, intelligence, charisma):
     name_check = check_name(name)
+    if name_check != True:
+        return name_check
     stat_check = check_stat(strength, intelligence, charisma)
+    if stat_check != True:
+        return stat_check
+    char_stats = f"{name}"
     if name_check == True and stat_check == True:
+        print("Character created successfully!")
         stats = {"STR": strength, "INT": intelligence, "CHA": charisma}
         for i in stats:
-            full_dots = full_dot * i
-            empty_dots = 10 - full_dots
-        return f"""Character Created!
-        Name {name}
-        STR {STR}
-        INT {INT}
-        CHA {CHA}"""
+            full_dots = full_dot * stats[i]
+            empty_dots = empty_dot*(10 - stats[i])
+            char_stats += f"\n{i} {full_dots}{empty_dots}"
+        return f"""{char_stats}"""
 
 def check_name(name):
     # checks if name is a string
@@ -50,6 +53,5 @@ def check_stat(strength, intelligence, charisma):
     
     else:
         return True
-    
 
 print(create_character("ren",4,2,1))

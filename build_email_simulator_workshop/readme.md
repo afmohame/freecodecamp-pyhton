@@ -1,0 +1,1 @@
+This is a workshop not like the others. In a workshop they explicitly say what to do clearly and help more. I've added this because I found it interesting how some things were done

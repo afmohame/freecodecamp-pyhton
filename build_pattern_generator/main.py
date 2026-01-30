@@ -4,7 +4,6 @@ def number_pattern(n):
         return "Argument must be an integer value."
     elif n <= 0:
         return "Argument must be an integer greater than 0."
-    
     else:
         for i in list_num:
             n -= 1
